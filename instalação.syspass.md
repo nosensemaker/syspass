@@ -1,6 +1,7 @@
 # Instalação do sysPass no Ubuntu 22.4
 
 1.0. Instale o servidor web Apache2 e o banco de dados MariaDB:
+
 $ apt-get install apache2 mariadb-server -y
 
 1.1. Instale pacotes adicionais e adicione o repositório para o PHP:
