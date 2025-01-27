@@ -30,7 +30,7 @@
 
 1.4. Reinicie o Apache para aplicar as mudanças:
 
-    $ systemctl restart apache2
+    $ sudo systemctl restart apache2
 
 # Configure o banco de dados MariaDB
 
