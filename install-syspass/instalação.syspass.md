@@ -151,7 +151,6 @@
 5.2. Ative o site e os módulos necessários: 
 
     $ a2ensite syspass
-    $ a2enmod rewrite ssl 
     $ systemctl reload apache2
 
 6.0. Teste no navegador usando o dominio configurado.
