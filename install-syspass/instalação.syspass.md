@@ -6,9 +6,9 @@
 
 1.1. Adicione o repositoŕio para o PHP:
 
-    $ add-apt-repository ppa:ondrej/php -y
+    $ sudo add-apt-repository ppa:ondrej/php -y
 
-1.1. Instale pacotes adicionais e adicione o repositório para o PHP:
+1.1. Instale pacotes adicionais:
 
     $ sudo apt install software-properties-common ca-certificates lsb-release apt-transport-https -y
     
