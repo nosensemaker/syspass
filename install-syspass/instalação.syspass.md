@@ -62,7 +62,7 @@
     
 2.3 Crie usuario de administrador:
 
-    $ mysql -u root -p
+    $ sudo mysql -u root -p
     $ create user 'name'@'%' identified by 'password';
     $ grant all privileges on syspassdb.* to 'name'@'%';
     $ flush privileges;
@@ -76,18 +76,18 @@
 
 3.1. Mova para o Direito do /var/www/html/syspass 
 
-    $ mv sysPass /var/www/html/syspass
+    $ sudo mv sysPass /var/www/html/syspass
 
 3.2. Ajuste as permissões e o proprietário do diretório:
 
-    $ chown -R www-data:www-data /var/www/html/syspass 
-    $ chmod 750 /var/www/html/syspass/app/{config,backup}
+    $ sudo chown -R www-data:www-data /var/www/html/syspass 
+    $ sudo chmod 750 /var/www/html/syspass/app/{config,backup}
 
 # Instale o Composer:
 
 4.0. Crie o script install-composer.sh no diretório do sysPass: 
 
-    $ vim /var/www/html/syspass/install-composer.sh
+    $ sudo vim /var/www/html/syspass/install-composer.sh
 
 4.1. Adicione o seguinte conteúdo:
 
