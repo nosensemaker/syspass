@@ -73,6 +73,19 @@ $ vim /etc/apache2/sites-available/syspass.conf
 
 5.1.0 Adicione a seguinte configuração:
 
+<VirtualHost *:80>
+ServerAdmin admin@example.com
+DocumentRoot "/var/www/html/syspass"
+ServerName syspass.example.com
+<Directory "/var/www/html/syspass/">
+Options MultiViews FollowSymlinks
+AllowOverride All
+Order allow,deny
+Allow from all
+</Directory>
+TransferLog /var/log/apache2/syspass_access.log
+ErrorLog /var/log/apache2/syspass_error.log
+</VirtualHost>
 
 
 5.1.0: Mude o ServerName para o nome do seu servidor, ex: syspass.vigilante.kira.br.
