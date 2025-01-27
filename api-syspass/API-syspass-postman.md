@@ -28,7 +28,7 @@ exemplo:
 
   ---
 
-  # Criando uma Requisição account/view
+  # Criando uma Requisição account/create
 
 2.1 Dentro do Postman, coloque o metodo POST e a URL da API:
 
@@ -36,16 +36,27 @@ exemplo:
     $ https://syspass.vigilante.kira.br/api.php = a url é de acordo com seu domain name.
 
 2.2 Vá em Body, em seguida em raw e coloque o contéudo JSON-RPC:
-    
-  {
-  "jsonrpc": "2.0",
-  "method": "account/view",
-  "params": {
-    "authToken": "api_token",
-    "tokenPass": "api_senha",
-    "id": 1
-  },
-    "id": 1
-}
+
+- Exemplo Explicativo:
+
+      {
+        "jsonrpc": "2.0",
+  
+      # metodo que api vai utilizar
+      "method": "account/create",
+      "params": {
+      # tokenGerado após a criação da autorização
+        "authToken": "3c51052421f35cea141d4778cfb663d4b1cfce21d0652403d970fa6673b1265c",
+      # é a senha utilizada na criação da autorização
+        "tokenPass": "12345678",
+        "name": "Deadpool",
+      # é o ID da categoria existinte! a que foi criada.
+        "categoryId": "3",
+      # é o ID do cliente correspondente criado 
+        "clientId": "1",
+        "pass": "123456"
+        },
+        "id": 1
+            }
 
 
