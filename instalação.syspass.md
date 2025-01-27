@@ -56,7 +56,6 @@ $ vim /var/www/html/syspass/install-composer.sh
 
 4.1.0 Adicione o seguinte conteúdo:
 
-[script](.../nosensemaker/syspass/install-composer.script)
 
 
 4.2.0 Mova para o diretorio do syspass e execute o script:
@@ -74,8 +73,7 @@ $ vim /etc/apache2/sites-available/syspass.conf
 
 5.1.0 Adicione a seguinte configuração:
 
-<VirtualHost *:80> ServerAdmin admin@localhost
-DocumentRoot "/var/www/html/syspass" ServerName syspass.example.com <Directory "/var/www/html/syspass/"> Options MultiViews FollowSymlinks AllowOverride All Require all granted TransferLog /var/log/apache2/syspass_access.log ErrorLog /var/log/apache2/syspass_error.log
+
 
 5.1.0: Mude o ServerName para o nome do seu servidor, ex: syspass.vigilante.kira.br.
 
