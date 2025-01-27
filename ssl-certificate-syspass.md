@@ -36,7 +36,7 @@
 
     $ sudo vim /etc/apache2/sites-available/syspass.conf
     
-2.5. Coloque os caminhos para a chave e o certificado:
+2.5. Copie o conteúdo e edite colocando os caminhos para a chave e o certificado:
 
     <VirtualHost *:80>
         ServerName syspass.vigilante.kira.br
