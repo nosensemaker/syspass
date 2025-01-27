@@ -2,6 +2,16 @@ https://syspass-doc.readthedocs.io/en/3.0/application/api.html
 
 
 
+{
+  "jsonrpc": "2.0",
+  "method": "account/search",
+  "params": {
+    "authToken": "auth_token_for_api"
+  },
+  "id": 1
+}
+
+
 
 
 # o endereço para acessar a API
