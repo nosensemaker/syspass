@@ -130,7 +130,7 @@
 5.1.0. Adicione a seguinte configuração:
 
     <VirtualHost *:80>
-    ServerAdmin admin@example.com
+    ServerAdmin admin@localhost
     DocumentRoot "/var/www/html/syspass"
     ServerName syspass.example.com
     <Directory "/var/www/html/syspass/">
