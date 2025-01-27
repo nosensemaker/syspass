@@ -59,3 +59,49 @@ exemplo:
   - categoryId = é o ID da categoria existente a que foi criada - no caso de criar, vai ser uma ID livre disponível para ser usada.
   - clientID = é o ID do cliente correspondente; exemplo: client -> Conta API
 
+2.3 Clique em SEND para enviar a requisição; deverá retornar algo parecido a isso:
+
+    {
+    "jsonrpc": "2.0",
+    "result": {
+        "itemId": 17,
+        "result": {
+            "id": 17,
+            "userId": 1,
+            "userGroupId": 1,
+            "userEditId": 1,
+            "name": "Deadpool",
+            "clientId": 1,
+            "categoryId": 3,
+            "login": "",
+            "url": "",
+            "pass": "",
+            "key": "",
+            "notes": "",
+            "otherUserEdit": "0",
+            "otherUserGroupEdit": "0",
+            "dateAdd": "2025-01-27 14:08:52",
+            "dateEdit": null,
+            "countView": 0,
+            "countDecrypt": 0,
+            "isPrivate": "0",
+            "isPrivateGroup": "0",
+            "passDate": 1737986932,
+            "passDateChange": 0,
+            "parentId": 0,
+            "categoryName": "API",
+            "clientName": "Contas API",
+            "userGroupName": "Admins",
+            "userName": "sysPass Admin",
+            "userLogin": "admin",
+            "userEditName": "sysPass Admin",
+            "userEditLogin": "admin",
+            "publicLinkHash": null
+        },
+        "resultCode": 0,
+        "resultMessage": "Account created",
+        "count": null
+    },
+    "id": 1
+    }    
+
