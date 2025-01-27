@@ -53,3 +53,9 @@ exemplo:
         "id": 1
         }
 
+  - method = metodo de action que api vai utilizar.
+  - authToken = tokenGerado após a criação da autorização.
+  - tokenPass = é a senha utilizada na criação da autorização.
+  - categoryId = é o ID da categoria existente a que foi criada - no caso de criar, vai ser uma ID livre disponível para ser usada.
+  - clientID = é o ID do cliente correspondente; exemplo: client -> Conta API
+
