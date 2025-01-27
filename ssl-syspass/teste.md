@@ -89,6 +89,7 @@ sudo vim /etc/apache2/sites-available/syspass.conf
 - **Redirecionar HTTP para HTTPS:** A primeira seção do VirtualHost garante que o tráfego na porta 80 seja redirecionado para a porta 443.
 - **Caminhos do certificado:** Ajustar os valores de `SSLCertificateFile` e `SSLCertificateKeyFile` para os arquivos gerados.
 - **DocumentRoot:** Definir o diretório onde estão os arquivos do Syspass.
+- **ServerAdmin:"" Localhost é definido em servidores de teste ou desenvolvimento.
 
 ---
 
@@ -131,4 +132,4 @@ sudo systemctl status apache2
 https://syspass.domain.name
 ```
 
-> **Importante:** Certificar-se de usar o domínio configurado no arquivo de certificado e no Apache.
+> **Importante:** Certificar-se de usar o domínio configurado na configuração do Apache e coloca-lo no hosts ou no DNS da sua máquina local.
