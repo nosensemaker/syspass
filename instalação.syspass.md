@@ -44,7 +44,7 @@ $ vim /var/www/html/syspass/install-composer.sh
 
 4.1.0 Adicione o seguinte conteúdo:
 
-´´´
+´
 #!/bin/sh
 EXPECTED_SIGNATURE="$(wget -q -O - https://composer.github.io/installer.sig)"
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
