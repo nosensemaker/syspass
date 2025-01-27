@@ -23,3 +23,5 @@ exemplo:
         # Password: Defina a senha para a autorização: é a TokenPass.
 
 - salve e clique em View Authorization: use o contéudo do Token no authToken.
+
+        # Token: 210309sdsajdbnh12034231049234
