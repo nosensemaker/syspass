@@ -62,8 +62,6 @@ RESULT=$?
 rm composer-setup.php
 exit $RESULT
 
-´´
-
 
 4.2.0 Mova para o diretorio do syspass e execute o script:
 $ cd /var/www/html/syspass/ $ sh install-composer.sh
