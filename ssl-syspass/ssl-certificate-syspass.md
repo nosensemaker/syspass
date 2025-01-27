@@ -4,18 +4,13 @@
 
     $ sudo apt install openssl
 
-1.1. Ative o modo ssl e rewrite:
-
-    $ a2enmod ssl
-    $ a2enmod rewrite
-
 ---
 
 # Gerando a chave e o certificado
 
 2.0. Crie o diretorio do certificado:
 
-    $ mkdir /etc/apache2/certificate
+    $ sudo mkdir /etc/apache2/certificate
 
 2.1. Mova para o diretorio:
 
@@ -24,7 +19,7 @@
 2.2. Gere uma chave privada e o certificado auto assinado do site:
     - commom_name é onde digita o ip ou o nome do host 
     
-    $ openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out syspass.crt -keyout syspass.key
+    $ sudo openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out syspass.crt -keyout syspass.key
 
 2.3. Certifique-se que o certificado e a chave estão no diretorio correto:
 
@@ -70,9 +65,9 @@
 
 4.0. Ative o syspass e reinicia o serviço apache
 
-      $ a2ensite syspass
-      $ systemctl restart apache2
-      $ systemctl status apache2
+      $ sudo a2ensite syspass
+      $ sudo systemctl restart apache2
+      $ sudo systemctl status apache2
 
 # Acessando URL
 
