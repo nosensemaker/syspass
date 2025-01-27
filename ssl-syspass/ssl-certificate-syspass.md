@@ -1,4 +1,4 @@
-# Configuração SSL Auto Assinado para Syspass
+                                                                                            # Configuração SSL Auto Assinado para Syspass
 
 1.0. Instale o Openssl:
 
@@ -17,13 +17,22 @@
     $ cd /etc/apache2/certificate
 
 2.2. Gere uma chave privada e o certificado auto assinado do site:
-    - commom_name é onde digita o ip ou o nome do host 
-    
+
     $ sudo openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out syspass.crt -keyout syspass.key
+
+- Padrão de preenchimento:
+
+      # Country Name: BR
+      # State or Province Name: Distrito Federal
+      # Locality Name: Brasilia
+      # Organization Name: ITI - Instituto Nacional de Tecnologia da Informação
+      # Organization Unit: ICP-Brasil
+      # Common Name: Nome de dominio configurado, ex: syspass.kira.br
+      # Email Addrewss: Não é obrigatório
 
 2.3. Certifique-se que o certificado e a chave estão no diretorio correto:
 
-    $ /etc/apache2/certificate
+    $ sudo ls /etc/apache2/certificate
 
 ---
 
@@ -33,7 +42,7 @@
 
     $ sudo vim /etc/apache2/sites-available/syspass.conf
     
-3.1. Copie o conteúdo e edite colocando os caminhos para a chave e o certificado:
+3.1. Substitue todo o conteúdo e edite colocando os caminhos para a chave e o certificado:
 
     <VirtualHost *:80>
         ServerName syspass.vigilante.kira.br
@@ -58,6 +67,10 @@
     </VirtualHost>
 
 - Foi colocado um redirecionamento da porta 80 (http) para a porta 443 (https)
+- ServerName: Nome de dominio configurado.
+- ServerAdmin: Por padrão, coloco localhost.
+- SSLCertificateFile: Coloque o caminho para o certificado, normalmente terminado com a extensão.crt
+- SSLCertificateKeyFile: Coloque o caminho para a chave, normalmente terminado com a extensão.key
 
 ---
 
@@ -66,8 +79,8 @@
 4.0. Ative o syspass e reinicia o serviço apache
 
        
-        a2enmod ssl
-         a2enmod rewrite
+      $ a2enmod ssl
+      % a2enmod rewrite
       $ sudo a2ensite syspass
       $ sudo systemctl restart apache2
       $ sudo systemctl status apache2
