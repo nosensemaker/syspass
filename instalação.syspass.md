@@ -15,6 +15,14 @@
 1.3. Edite o arquivo de configuração do PHP:
 
     $ vim /etc/php/7.4/apache2/php.ini
+    
+1.3.1 Faça os ajustes necessários:
+
+     # post_max_size = 100M
+     # upload_max_filesize = 100M
+     # max_execution_time = 7200
+     # memory_limit = 512M
+     # date.timezone = UTC
 
 1.4. Reinicie o Apache para aplicar as mudanças:
 
