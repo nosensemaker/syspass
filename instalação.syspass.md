@@ -59,7 +59,7 @@
 2.3 Crie usuario de administrador:
 
     $ mysql -u root -p
-    $ create user "name"@"%" identified by 'password';
+    $ create user 'name'@'%' identified by 'password';
     $ grant all privileges on syspassdb.* to 'name'@'%';
     $ flush privileges;
     $ exit;
