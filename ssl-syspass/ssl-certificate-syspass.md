@@ -64,8 +64,10 @@
 # Ativação
 
 4.0. Ative o syspass e reinicia o serviço apache
-a2enmod rewrite
-a2enmod ssl
+
+       
+        a2enmod ssl
+         a2enmod rewrite
       $ sudo a2ensite syspass
       $ sudo systemctl restart apache2
       $ sudo systemctl status apache2
