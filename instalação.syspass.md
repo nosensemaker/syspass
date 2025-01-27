@@ -30,7 +30,7 @@
 
 # Configure o banco de dados MariaDB
 
-2.0 Execute o script de configuração do MariaDB:
+2.0. Execute o script de configuração do MariaDB:
 
     $ mysql_secure_installation
 
@@ -46,7 +46,7 @@
 
 # Clone o repositório do sysPass
 
-3.0 Clone o repositório oficial do GitHub:
+3.0. Clone o repositório oficial do GitHub:
 
     $ git clone https://github.com/nuxsmin/sysPass.git
 
@@ -65,7 +65,7 @@
 
     $ vim /var/www/html/syspass/install-composer.sh
 
-4.1.0 Adicione o seguinte conteúdo:
+4.1. Adicione o seguinte conteúdo:
 
 
     #!/bin/sh
@@ -87,11 +87,11 @@
 
 
 
-4.2.0 Mova para o diretorio do syspass e execute o script:
+4.2.0. Mova para o diretorio do syspass e execute o script:
 
     $ cd /var/www/html/syspass/ $ sh install-composer.sh
 
-4.3.0 Instale o Composer:
+4.3.0. Instale o Composer:
 
 $ php composer.phar install --no-dev
 
@@ -100,7 +100,7 @@ $ php composer.phar install --no-dev
 
     $ vim /etc/apache2/sites-available/syspass.conf
 
-5.1.0 Adicione a seguinte configuração:
+5.1.0. Adicione a seguinte configuração:
 
     <VirtualHost *:80>
     ServerAdmin admin@example.com
@@ -117,14 +117,14 @@ $ php composer.phar install --no-dev
     </VirtualHost>
 
 
-5.1.0: Mude o ServerName para o nome do seu servidor, ex: syspass.vigilante.kira.br.
+5.1.2. Mude o ServerName para o nome do seu servidor, ex: syspass.vigilante.kira.br.
 
 # Ativação
 
-5.2.0 Ative o site e os módulos necessários: 
+5.2. Ative o site e os módulos necessários: 
 
     $ a2ensite syspass $ a2enmod rewrite ssl $ systemctl reload apache2
 
-6.0.0 Teste no navegador usando o dominio configurado.
+6.0. Teste no navegador usando o dominio configurado.
 
     exemplo: http://syspass.dominio.name $ http://syspass.domonio.name
