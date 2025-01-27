@@ -154,5 +154,6 @@
     $ sudo systemctl reload apache2
 
 6.0. Teste no navegador usando o dominio configurado.
+- não esqueça de colocar no hosts da maquina local ou no dns o domain name configurado.
 
     exemplo: http://syspass.dominio.name $ http://syspass.domonio.name
