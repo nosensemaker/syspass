@@ -1,6 +1,6 @@
 # Instalando o Postman para requisição de API
 
-1.0 Certifique-se que o curl e o snap estejam instalados:
+1.0. Certifique-se que o curl e o snap estejam instalados:
         
         $ sudo apt update
         $ sudo apt install curl -y
@@ -8,19 +8,19 @@
 
 # Instalação do Postman via SNAP
 
-2.0 Instele o Postman usando o snap
+2.0. Instele o Postman usando o snap
 
         $ sudo snap install postman
 
-2.1 Verifique se o Postman foi instaldo.
+2.1. Verifique se o Postman foi instaldo.
 
         $ snap list | grep postman
 
-2.2 Abra o postman pelo terminal ou manualmente pesquisando pelo nome:
+2.2. Abra o postman pelo terminal ou manualmente pesquisando pelo nome:
 
         $ postman
 
 # Primeiros passos:
 
-3.0 Crie sua conta ou continue sem conta; preferível criar a conta.
+3.0. Crie sua conta ou continue sem conta; preferível criar a conta.
 
