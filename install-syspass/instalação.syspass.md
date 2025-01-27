@@ -4,10 +4,14 @@
 
     $ sudo apt-get install apache2 mariadb-server -y
 
+1.1. Adicione o repositoŕio para o PHP:
+
+    $ add-apt-repository ppa:ondrej/php -y
+
 1.1. Instale pacotes adicionais e adicione o repositório para o PHP:
 
-    $ sudo apt install software-properties-common ca-certificates lsb-release apt-transport-https -y add-apt-repository ppa:ondrej/php -y
-
+    $ sudo apt install software-properties-common ca-certificates lsb-release apt-transport-https -y
+    
 1.2. Instale o PHP 7.4 e as extensões necessárias para o sysPass:
 
     $ sudo apt install libapache2-mod-php7.4 php7.4 php7.4-mysqli php7.4-pdo php7.4-cgi php7.4-cli php7.4-common php7.4-gd php7.4-json php7.4-readline php7.4-curl php7.4-intl php7.4-ldap php7.4-xml php7.4-mbstring git -y
