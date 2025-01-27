@@ -11,6 +11,8 @@
 
 ---
 
+# Gerando a chave e o certificado
+
 2.0. Crie o diretorio do certificado:
 
     $ mkdir /etc/apache2/certificate
@@ -27,6 +29,8 @@
 2.3. Certifique-se que o certificado e a chave estão no diretorio correto:
 
     $ /etc/apache2/certificate
+
+# Configuração Apache
 
 2.4. Edite o arquivo de configuração do Apache:
 
@@ -57,6 +61,8 @@
     </VirtualHost>
 
 - Foi colocado um redirecionamento da porta 80 (http) para a porta 443 (https)
+
+# Ativação
 
 3.1. Ative o syspass e reinicia o serviço apache
 
