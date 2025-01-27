@@ -34,6 +34,17 @@
 
     $ mysql_secure_installation
 
+2.0.1 Sugestão de Configuração:
+
+    # Current password for root ( coloque a senha do root )
+    # Unix_socket authentication = n
+    # Change the root password? = n
+    # Remove anonymous users? = y
+    # Disallow root login remotely? = y
+    # Remove test database and access to it? = y
+    # Reload privilege tables now? = y
+    
+
 2.1. Acesse o MariaDB:
 
     $ mysql -u root -p
