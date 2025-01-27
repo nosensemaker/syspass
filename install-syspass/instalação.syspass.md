@@ -36,7 +36,7 @@
 
 2.0. Execute o script de configuração do MariaDB:
 
-    $ mysql_secure_installation
+    $ sudo mysql_secure_installation
 
 2.0.1 Sugestão de Configuração:
 
@@ -51,7 +51,7 @@
 
 2.1. Acesse o MariaDB:
 
-    $ mysql -u root -p
+    $ sudo mysql -u root -p
 
 2.2. Crie o banco de dados e configure o usuário de serviço:
 
