@@ -20,5 +20,6 @@ exemplo:
   
         # User: Selecione o usuario dono da autorização
         # Action: Defina qual ação essa api poderá fazer:
-        # 
-        
+        # Password: Defina a senha para a autorização: é a TokenPass.
+
+- salve e clique em View Authorization: use o contéudo do Token no authToken.
