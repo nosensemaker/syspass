@@ -108,8 +108,9 @@ $ vim /etc/apache2/sites-available/syspass.conf
     ErrorLog /var/log/apache2/syspass_error.log
 </VirtualHost>
 
-# mude o ServerName para o nome do seu servidor, ex: syspass.vigilante.kira.br.
+5;1.0: Mude o ServerName para o nome do seu servidor, ex: syspass.vigilante.kira.br.
 
+# Ativação
 5.2.0 Ative o site e os módulos necessários:
 $ a2ensite syspass
 $ a2enmod rewrite ssl
@@ -119,6 +120,6 @@ $ systemctl reload apache2
 ---
 
 6.0.0 Teste no navegador usando o dominio configurado.
-# exemplo: http://syspass.dominio.name
+- exemplo: http://syspass.dominio.name
 $ http://syspass.domonio.name
 
