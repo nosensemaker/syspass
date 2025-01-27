@@ -20,6 +20,18 @@
 
         $ postman
 
+# Instalação do Postman manualmente
+
+2.0.1. Acesse o site do Postman oficial:
+
+        $ https://www.postman.com/downloads/
+
+2.0.2. Faça o Download na versao linux(x64)
+
+2.0.3. Extraia o arquivo postman-linux-x64.tar.gz:
+
+2.0.4. Entre no diretorio que foi extraído pela interface e procure pelo Postman executavel para abrir.
+
 # Primeiros passos:
 
 3.0. Crie sua conta ou continue sem conta; preferível criar a conta.
