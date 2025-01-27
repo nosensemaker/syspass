@@ -34,11 +34,11 @@
 
 # Configuração Apache
 
-2.4. Edite o arquivo de configuração do Apache:
+3.0. Edite o arquivo de configuração do Apache:
 
     $ sudo vim /etc/apache2/sites-available/syspass.conf
     
-2.5. Copie o conteúdo e edite colocando os caminhos para a chave e o certificado:
+3.1. Copie o conteúdo e edite colocando os caminhos para a chave e o certificado:
 
     <VirtualHost *:80>
         ServerName syspass.vigilante.kira.br
@@ -68,15 +68,15 @@
 
 # Ativação
 
-3.1. Ative o syspass e reinicia o serviço apache
+4.0. Ative o syspass e reinicia o serviço apache
 
       $ a2ensite syspass
       $ systemctl restart apache2
       $ systemctl status apache2
 
-# Teste
+# Acessando URL
 
-4.1. Acesse a URL do syspass com https e o dominio configurado:
+5.0. Acesse a URL do syspass com https e o dominio configurado:
 
     $ https://syspass.domain.name 
 
