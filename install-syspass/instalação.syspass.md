@@ -118,7 +118,9 @@
 
 4.3.0. Instale o Composer:
 
-$ php composer.phar install --no-dev
+- Caso necessario force executar com o root com yes
+
+    $ sudo php composer.phar install --no-dev
 
 # Configure o Apache
 5.0. Crie o arquivo de configuração syspass.conf:
