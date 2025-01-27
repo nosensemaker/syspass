@@ -20,7 +20,7 @@
 
         $ postman
 
-# Usando o Postman
+# Primeiros passos:
 
-3.1 Crie sua conta ou continue sem conta; preferível criar a conta.
-  
+3.0 Crie sua conta ou continue sem conta; preferível criar a conta.
+
