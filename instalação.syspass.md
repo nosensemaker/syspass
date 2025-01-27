@@ -49,9 +49,18 @@
 
     $ mysql -u root -p
 
-2.2. Crie o banco de dados e configure o usuário: $ create database syspassdb;
+2.2. Crie o banco de dados e configure o usuário de serviço:
 
+    $ create database syspassdb;
     $ grant all privileges on syspassdb.* to 'syspassuser'@'localhost' identified by 'password'; 
+    $ flush privileges;
+    $ exit;
+    
+2.3 Crie usuario de administrador:
+
+    $ mysql -u root -p
+    $ create user "name"@"%" identified by 'password';
+    $ grant all privileges on syspassdb.* to 'name'@'%';
     $ flush privileges;
     $ exit;
 
