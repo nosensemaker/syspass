@@ -24,9 +24,9 @@ $ systemctl restart apache2
 
 ---
 
-2.0. Configure o banco de dados MariaDB
+# Configure o banco de dados MariaDB
 
-# Execute o script de configuração do MariaDB:
+2.0 Execute o script de configuração do MariaDB:
 $ mysql_secure_installation
 
 
@@ -41,8 +41,8 @@ $ exit;
 
 ---
 
-3.0 Clone o repositório do sysPass
-# Clone o repositório oficial do GitHub:
+# Clone o repositório do sysPass
+3.0 Clone o repositório oficial do GitHub:
 $ git clone https://github.com/nuxsmin/sysPass.git
 
 3.1. Mova para o Direito do /var/www/html/syspass
