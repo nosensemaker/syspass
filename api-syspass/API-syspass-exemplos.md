@@ -1,6 +1,6 @@
 # API SYSPASS EXEMPLOS DE USOS
 
-https://syspass-doc.readthedocs.io/en/3.0/application/api.html
+- URL para exemplos da API: https://syspass-doc.readthedocs.io/en/3.0/application/api.html
 
 
 
