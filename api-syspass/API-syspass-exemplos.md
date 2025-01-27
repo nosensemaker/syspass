@@ -1,24 +1,19 @@
 # API SYSPASS EXEMPLOS DE USOS
 
 - URL para exemplos da API: https://syspass-doc.readthedocs.io/en/3.0/application/api.html
+- URL para Acessar a API:   $ https://syspass.domain.name/api.php
+---
 
+- exemplo: account/search =  para procurar account
 
-
-{
-  "jsonrpc": "2.0",
-  "method": "account/search",
-  "params": {
-    "authToken": "auth_token_for_api"
-  },
-  "id": 1
-}
-
-
-
-
-# o endereço para acessar a API
-
-  $ https://syspass.vigilante.kira.br/api.php
+      {
+        "jsonrpc": "2.0",
+        "method": "account/search",
+        "params": {
+        "authToken": "auth_token_for_api"
+      },
+      "id": 1
+      }
 
 {
   "jsonrpc": "2.0",
