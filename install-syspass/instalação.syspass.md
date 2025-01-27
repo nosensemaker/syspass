@@ -113,7 +113,8 @@
 
 4.2.0. Mova para o diretorio do syspass e execute o script:
 
-    $ cd /var/www/html/syspass/ $ sh install-composer.sh
+    $ cd /var/www/html/syspass/ 
+    $ sh install-composer.sh
 
 4.3.0. Instale o Composer:
 
