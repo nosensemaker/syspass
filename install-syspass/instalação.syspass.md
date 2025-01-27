@@ -125,7 +125,7 @@
 # Configure o Apache
 5.0. Crie o arquivo de configuração syspass.conf:
 
-    $ vim /etc/apache2/sites-available/syspass.conf
+    $ sudo vim /etc/apache2/sites-available/syspass.conf
 
 5.1.0. Adicione a seguinte configuração:
 
