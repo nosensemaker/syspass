@@ -150,8 +150,8 @@
 
 5.2. Ative o site e os módulos necessários: 
 
-    $ a2ensite syspass
-    $ systemctl reload apache2
+    $ sudo a2ensite syspass
+    $ sudo systemctl reload apache2
 
 6.0. Teste no navegador usando o dominio configurado.
 
