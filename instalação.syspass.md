@@ -44,7 +44,7 @@ $ vim /var/www/html/syspass/install-composer.sh
 
 4.1.0 Adicione o seguinte conteúdo:
 
-[Clique aqui para ver o script](../install-composer.script)
+[script](.../nosensemaker/syspass/blob/main/install-composer.script)
 
 
 4.2.0 Mova para o diretorio do syspass e execute o script:
