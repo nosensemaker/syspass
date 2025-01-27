@@ -60,7 +60,7 @@ fi
 php composer-setup.php --quiet
 RESULT=$?
 rm composer-setup.php
-exit $RESULT
+exit $RESULT ´
 
 
 4.2.0 Mova para o diretorio do syspass e execute o script:
