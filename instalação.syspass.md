@@ -40,8 +40,11 @@
 
 2.2. Crie o banco de dados e configure o usuário: $ create database syspassdb;
 
-    $ grant all privileges on syspassdb.* to 'syspassuser'@'localhost' identified by 'password'; $ flush privileges; $ exit;
-Clone o repositório do sysPass
+    $ grant all privileges on syspassdb.* to 'syspassuser'@'localhost' identified by 'password'; 
+    $ flush privileges;
+    $ exit;
+
+# Clone o repositório do sysPass
 
 3.0 Clone o repositório oficial do GitHub:
 
