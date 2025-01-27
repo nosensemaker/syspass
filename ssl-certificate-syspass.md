@@ -4,15 +4,22 @@
 
     $ sudo apt install openssl
 
-2.0. Gere uma chave privada e o certificado auto assinado do site:
+---
+
+2.0. Crie o diretorio do certificado:
+
+    $ mkdir /etc/apache2/certificate
+
+2.1. Mova para o diretorio:
+
+    $ cd /etc/apache2/certificate
+
+2.2. Gere uma chave privada e o certificado auto assinado do site:
     - commom_name é onde digita o ip ou o nome do host 
     
-    $ openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out nginx-certificate.crt -keyout nginx.key
+    $ openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out syspass.crt -keyout syspass.key
 
-
-
-
-1.0. Ativando o modo ssl e rewrite:
+3.0. Ativando o modo ssl e rewrite:
 
     $ a2enmod ssl
     $ a2enmod rewrite
