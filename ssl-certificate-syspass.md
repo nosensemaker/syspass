@@ -1,6 +1,8 @@
 # Configuração SSL Auto Assinado para Syspass
 
-1.0. 
+1.0. Ativando o modo ssl e rewrite
+    $ a2enmod ssl
+    $ a2enmod rewrite
 
 
 
