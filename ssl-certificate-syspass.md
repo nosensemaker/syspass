@@ -4,6 +4,11 @@
 
     $ sudo apt install openssl
 
+1.1. Ative o modo ssl e rewrite:
+
+    $ a2enmod ssl
+    $ a2enmod rewrite
+
 ---
 
 2.0. Crie o diretorio do certificado:
@@ -19,23 +24,15 @@
     
     $ openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out syspass.crt -keyout syspass.key
 
-3.0. Ativando o modo ssl e rewrite:
+2.3. Certifique-se que o certificado e a chave estão no diretorio correto:
 
-    $ a2enmod ssl
-    $ a2enmod rewrite
+    $ /etc/apache2/certificate
 
+2.4. Edite o arquivo de configuração do Apache:
 
-
-
-
-
-
-
-
-
-
-
-
+    $ sudo vim /etc/apache2/sites-available/syspass.conf
+    
+2.5. Coloque os caminhos para a chave e o certificado:
 
     <VirtualHost *:80>
         ServerName syspass.vigilante.kira.br
@@ -45,7 +42,7 @@
     <VirtualHost *:443>
         ServerAdmin admin@localhost
         DocumentRoot "/var/www/html/syspass"
-        ServerName syspass.vigilante.kira.br
+        ServerName syspass.exemplo.br
         SSLEngine on
         SSLCertificateFile /etc/apache2/certificate/syspass.crt
         SSLCertificateKeyFile /etc/apache2/certificate/syspass.key
@@ -57,4 +54,28 @@
     </Directory>
     TransferLog /var/log/apache2/syspass_access.log
     ErrorLog /var/log/apache2/syspass_error.log
-</VirtualHost>
+    </VirtualHost>
+
+- Foi colocado um redirecionamento da porta 80 (http) para a porta 443 (https)
+
+3.1. Ative o syspass e reinicia o serviço apache
+
+      $ a2ensite syspass
+      $ systemctl restart apache2
+      $ systemctl status apache2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
