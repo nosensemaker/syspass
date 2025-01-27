@@ -1,5 +1,7 @@
 # Instalando o Postman para requisição de API
 
+- A instalaçao é na maquina local, é um programa com interface.
+
 1.0. Certifique-se que o curl e o snap estejam instalados:
         
         $ sudo apt update
