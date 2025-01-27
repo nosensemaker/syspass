@@ -30,6 +30,8 @@
 
     $ /etc/apache2/certificate
 
+---
+
 # Configuração Apache
 
 2.4. Edite o arquivo de configuração do Apache:
@@ -62,6 +64,8 @@
 
 - Foi colocado um redirecionamento da porta 80 (http) para a porta 443 (https)
 
+---
+
 # Ativação
 
 3.1. Ative o syspass e reinicia o serviço apache
@@ -70,6 +74,11 @@
       $ systemctl restart apache2
       $ systemctl status apache2
 
+# Teste
+
+4.1. Acesse a URL do syspass com https e o dominio configurado:
+
+    $ https://syspass.domain.name 
 
 
 
