@@ -1,4 +1,4 @@
-                                                                                            # Configuração SSL Auto Assinado para Syspass
+# Configuração SSL Auto Assinado para Syspass
 
 1.0. Instale o Openssl:
 
