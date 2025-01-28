@@ -244,5 +244,3 @@ sudo systemctl reload apache2
 7.5. Finalização da Instalação
 
 - Clique em **Install** para concluir a instalação.
-
----
