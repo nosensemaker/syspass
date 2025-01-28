@@ -23,7 +23,7 @@
 ```
 
 #### Requisitos
-- Criar uma conta no sysPass previamente.
+- Ter uma conta no sysPass existente.
 
 ---
 
@@ -47,7 +47,7 @@
 ```
 
 #### Requisitos
-- Criar uma categoria, uma conta e um cliente no sistema previamente.
+- Ter uma categoria, uma conta e um cliente no sistem já existentes.
 
 ---
 
@@ -67,10 +67,6 @@
   "id": 1
 }
 ```
-
-#### Requisitos
-- Configurar autenticação válida para utilizar a API.
-
 ---
 
 ## Parâmetros Importantes
