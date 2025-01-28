@@ -219,7 +219,7 @@ sudo systemctl reload apache2
 **Nota:** Não se esqueça de adicionar o domínio configurado no arquivo `hosts` da máquina local ou no DNS.
 
 ---
-# 7.0. Instalação do sysPass via Web
+## 7.0. Instalação do sysPass via Web
 
 ## 7.1. Configuração do Admin do sysPass
 
