@@ -2,7 +2,7 @@
 # Exemplos de Uso da API do sysPass
 
 - URL para exemplos e mais informações da API: [Documentação oficial](https://syspass-doc.readthedocs.io/en/3.0/application/api.html)  
-- URL para acessar a API: `https://syspass.domain.name/api.php`
+- URL para acessar a API: `https://server_name/api.php
 
 ---
 
