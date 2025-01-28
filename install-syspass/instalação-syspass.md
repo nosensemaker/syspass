@@ -214,7 +214,7 @@ sudo systemctl reload apache2
 
 *Exemplo:*
 
-- `http://syspass.dominio.name`
+- `http://syspass.dominio.name/`
 
 **Nota:** Não se esqueça de adicionar o domínio configurado no arquivo `hosts` da máquina local ou no DNS.
 
