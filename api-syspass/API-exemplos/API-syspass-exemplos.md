@@ -1,54 +1,82 @@
-# API SYSPASS EXEMPLOS DE USOS
 
-- URL para exemplos e mais informações da API: https://syspass-doc.readthedocs.io/en/3.0/application/api.html
-- URL para Acessar a API:   $ https://syspass.domain.name/api.php
+# Exemplos de Uso da API do sysPass
+
+- URL para exemplos e mais informações da API: [Documentação oficial](https://syspass-doc.readthedocs.io/en/3.0/application/api.html)  
+- URL para acessar a API: `https://syspass.domain.name/api.php`
+
 ---
 
-- exemplo: account/search =  para procurar account
+## Exemplos de Requisições
 
-      {
-        "jsonrpc": "2.0",
-        "method": "account/search",
-        "params": {
-        "authToken": "auth_token_for_api"
-      },
-      "id": 1
-      }
+### **1. Procurar conta (account/search)**
 
+#### Exemplo de Payload
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "account/search",
+  "params": {
+    "authToken": "auth_token_for_api"
+  },
+  "id": 1
+}
+```
 
-- exemplo: account/create: criar account.
+#### Requisitos
+- Criar uma conta no sysPass previamente.
 
-      {
-        "jsonrpc": "2.0",
-        "method": "account/create",
-        "params": {
-          "authToken": "token_api",
-          "tokenPass": "senha_api",
-          "name": "name",
-          "categoryId": "3",
-          "clientId": "1",
-          "pass": "senha"
-          },
-          "id": 1
-        {
+---
 
-- exemplo: category/create: criar categoria nova.
+### **2. Criar conta (account/create)**
 
-      {
-        "jsonrpc": "2.0",
-        "method": "category/create",
-        "params": {
-          "authToken": "token_api",
-          "tokenPass": "senha_api",
-          "name": "name",
-          "description": "Teste final do teste"
-          },
-          "id": 1
-      }
+#### Exemplo de Payload
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "account/create",
+  "params": {
+    "authToken": "token_api",
+    "tokenPass": "senha_api",
+    "name": "name",
+    "categoryId": "3",
+    "clientId": "1",
+    "pass": "senha"
+  },
+  "id": 1
+}
+```
 
+#### Requisitos
+- Criar uma categoria, uma conta e um cliente no sistema previamente.
 
-- method = metodo de action que api vai utilizar.
-- authToken = tokenGerado após a criação da autorização.
-- tokenPass = é a senha utilizada na criação da autorização.
-- categoryId = é o ID da categoria existente a que foi criada - no caso de criar, vai ser uma ID livre disponível para ser usada.
-- clientID = é o ID do cliente correspondente; exemplo: client -> Conta API
+---
+
+### **3. Criar categoria (category/create)**
+
+#### Exemplo de Payload
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "category/create",
+  "params": {
+    "authToken": "token_api",
+    "tokenPass": "senha_api",
+    "name": "name",
+    "description": "Teste final do teste"
+  },
+  "id": 1
+}
+```
+
+#### Requisitos
+- Configurar autenticação válida para utilizar a API.
+
+---
+
+## Parâmetros Importantes
+
+- **`method`**: Método de ação que a API irá utilizar.
+- **`authToken`**: Token gerado após a criação da autorização.
+- **`tokenPass`**: Senha utilizada na criação da autorização.
+- **`categoryId`**: ID da categoria existente ou criada. Para criar uma nova, será gerada uma ID disponível.
+- **`clientId`**: ID do cliente correspondente. Exemplo: cliente vinculado a uma conta da API.
