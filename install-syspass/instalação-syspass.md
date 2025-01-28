@@ -232,7 +232,7 @@ sudo systemctl reload apache2
 
 7.3. Configuração do Banco de Dados (MySQL)
 
-- **Usuário de acesso ao banco**: `syspassuser` (usuário criado previamente).
+- **Usuário de acesso ao banco**: `syspassuser` (usuário criado anteriormente).
 - **Senha do usuário**: Senha definida para o usuário `syspassuser`.
 - **Nome do banco de dados**: `syspassdb` (banco criado anteriormente).
 - **Servidor do banco de dados**: `localhost` (servidor onde o banco de dados está localizado).
