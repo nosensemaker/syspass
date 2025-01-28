@@ -150,7 +150,7 @@ rm composer-setup.php
 exit $RESULT
 ```
 
-4.3. Mover para o diretório do sysPass e executar o script:
+4.3. Acessar o diretório do sysPass e executar o script:
 
 ```bash
 cd /var/www/html/syspass/
@@ -194,7 +194,9 @@ sudo vim /etc/apache2/sites-available/syspass.conf
 </VirtualHost>
 ```
 
-5.3. Alterar o `ServerName` para o nome do seu servidor (exemplo: `syspass.vigilante.kira.br`).
+- **DocumentRoot:** Definir o diretório onde estão os arquivos do Syspass.
+- **ServerAdmin:** Localhost é definido em servidores de teste ou desenvolvimento.
+- **ServerName:""  Alterar para o nome do seu servidor (exemplo: `syspass.vigilante.kira.br`).
 
 5.4. Ativar o site e os módulos necessários:
 
