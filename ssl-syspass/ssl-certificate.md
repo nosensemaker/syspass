@@ -100,8 +100,10 @@ sudo vim /etc/apache2/sites-available/syspass.conf
 ### 4.1 Ativar os módulos SSL e Rewrite:
 
 ```bash
-a2enmod ssl
-a2enmod rewrite
+sudo a2enmod ssl
+```
+```bash
+sudo a2enmod rewrite
 ```
 
 ### 4.2 Habilitar o site configurado:
