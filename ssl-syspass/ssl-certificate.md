@@ -134,4 +134,4 @@ sudo systemctl status apache2
 https://syspass.domain.name
 ```
 
-> **Importante:** Certificar-se de usar o domínio configurado na configuração do Apache e coloca-lo no hosts ou no DNS da sua máquina local.
+> **Importante:** Certificar-se de usar o domínio configurado na configuração do Apache e coloca-lo no hosts da sua máquina local ou no DNS.
