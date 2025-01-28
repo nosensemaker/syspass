@@ -196,7 +196,7 @@ sudo vim /etc/apache2/sites-available/syspass.conf
 
 - **DocumentRoot:** Definir o diretório onde estão os arquivos do Syspass.
 - **ServerAdmin:** Localhost é definido em servidores de teste ou desenvolvimento.
-- **ServerName:""  Alterar para o nome do seu servidor (exemplo: `syspass.vigilante.kira.br`).
+- **ServerName:** Alterar para o nome do seu servidor (exemplo: `syspass.vigilante.kira.br`).
 
 5.3. Ativar o site e os módulos necessários:
 
