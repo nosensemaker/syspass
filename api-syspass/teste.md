@@ -45,6 +45,7 @@ postman
 3.3. Extrair o arquivo `postman-linux-x64.tar.gz` na pasta de downloads:
 
 ```bash
+cd /home/user/Downloads
 tar -xvzf postman-linux-x64.tar.gz
 ```
 
