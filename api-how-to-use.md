@@ -43,15 +43,19 @@ Token: 210309sdsajdbnh12034231049234
 2.3. **Preencher os detalhes da Account**  
 
    - **Name**: Insira o nome da Account.  
-   - **Client**: Selecione o cliente correspondente.  
+   - **Client**: Selecione o cliente correspondente.
+```bash
      - Caso não exista, clique no botão **+**.  
      - Uma aba chamada **New Client** será aberta.  
-       - Preencha o nome do cliente e uma descrição.  
+       - Preencha o nome do cliente e uma descrição.
+```
 
-   - **Category**: Selecione a categoria correspondente.  
+   - **Category**: Selecione a categoria correspondente.
+```bash
      - Caso não exista, clique no botão **+**.  
      - Uma aba chamada **New Category** será aberta.  
-       - Preencha o nome da categoria e uma descrição.  
+       - Preencha o nome da categoria e uma descrição.
+```
 
    - **User**: Insira o usuário responsável pela Account.  
 
