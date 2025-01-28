@@ -219,24 +219,30 @@ sudo systemctl reload apache2
 **Nota:** Não se esqueça de adicionar o domínio configurado no arquivo `hosts` da máquina local ou no DNS.
 
 ---
-### 7. Instalação Syspass via Web
+# 7.0. Instalação do sysPass via Web
 
-7.1. sysPass Admin:
+## 7.1. Configuração do Admin do sysPass
 
-sysPass admin user: admin
-password: escolha uma senha forte para o usuario admin
+- **Usuário Admin do sysPass**: `admin`
+- **Senha**: Escolha uma senha forte para o usuário admin.
 
-7.2. Master Password:
+## 7.2. Senha Mestre (Master Password)
 
-Master Password: escolha uma senha forte para o master
+- **Master Password**: Escolha uma senha forte para o Master Password.
 
-7.3. DB Configuration (MySQL):
-DB access user: syspassuser = usuario do banco de dados criado
-DB access password: senha do usuario syspass do banco de dados
-sysPass database name: syspassdb = database criada
-sysPass database server: localhost = servidor do banco de dados
+## 7.3. Configuração do Banco de Dados (MySQL)
 
-7.4. General:
-Hosting Mode: Ative o modo para não criar ou verificar permissões do Banco de Dados.
+- **Usuário de acesso ao banco**: `syspassuser` (usuário criado previamente).
+- **Senha do usuário**: Senha definida para o usuário `syspassuser`.
+- **Nome do banco de dados**: `syspassdb` (banco criado anteriormente).
+- **Servidor do banco de dados**: `localhost` (servidor onde o banco de dados está localizado).
 
-7.5. Clique em Install
+## 7.4. Configuração Geral
+
+- **Hosting Mode**: Ative este modo para evitar a criação ou verificação de permissões no banco de dados.
+
+## 7.5. Finalização da Instalação
+
+- Clique em **Install** para concluir a instalação.
+
+---
