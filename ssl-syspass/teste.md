@@ -24,6 +24,8 @@ cd /etc/apache2/certificate
 
 ### 2.3 Gerar a chave privada e o certificado autoassinado:
 
+> **Nota:** syspass.crt é o certificado e syspass.key é a chave: o nome pode ser alterado como desejar.
+
 ```bash
 sudo openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out syspass.crt -keyout syspass.key
 ```
