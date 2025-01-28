@@ -1,4 +1,4 @@
-# Fazendo Requisição POST com Postman na API do sysPass
+# Fazer Requisição POST com Postman na API do sysPass
 
 ## Base URL para acessar a API
 
@@ -8,25 +8,25 @@ https://server_name/api.php
 
 ---
 
-## 1. Criando um Novo Token de Autorização
+## 1. Criar um Novo Token de Autorização
 
-1.1. Acesse o sysPass via web:
+1.1. Acessar o sysPass via web:
 
 ```bash
 https://syspass.vigilante.kira.br
 ```
 
-1.2. Navegue até **Users and Accesses** > **API Authorizations**.
+1.2. Navegar até **Users and Accesses** > **API Authorizations**.
 
-1.3. Clique no botão "+" e selecione **New Authorization**.
+1.3. Clicar no botão "+" e selecione **New Authorization**.
 
-1.4. Preencha os campos:
+1.4. Preencher os campos:
 
 - **User**: Selecione o usuário dono da autorização.
 - **Action**: Defina ações que essa API poderá realizar (ex.: `account/search`, `category/create`, etc.).
 - **Password**: Defina uma senha para a autorização (TokenPass).
 
-1.5. Salve a autorização e clique em **View Authorization** para obter o token gerado.
+1.5. Salvar a autorização e clique em **View Authorization** para obter o token gerado.
 
 Exemplo de Token:
 
@@ -36,20 +36,49 @@ Token: 210309sdsajdbnh12034231049234
 
 ---
 
-## 2. Criando uma Requisição `account/search`
+## 2. Criar uma Account no sysPass: manualmente.
+
+2.1. Clique em **New Account** no menu.
+
+2.3. **Preencher os detalhes da Account**  
+
+   - **Name**: Insira o nome da Account.  
+   - **Client**: Selecione o cliente correspondente.  
+     - Caso não exista, clique no botão **+**.  
+     - Uma aba chamada **New Client** será aberta.  
+       - Preencha o nome do cliente e uma descrição.  
+
+   - **Category**: Selecione a categoria correspondente.  
+     - Caso não exista, clique no botão **+**.  
+     - Uma aba chamada **New Category** será aberta.  
+       - Preencha o nome da categoria e uma descrição.  
+
+   - **User**: Insira o usuário responsável pela Account.  
+
+   - **Password**: Insira a senha que será salva para esta Account.  
+
+3. **Preencher informações adicionais (opcional)**  
+   - Insira quaisquer outras informações nos campos disponíveis, conforme necessário.
+
+4. **Salvar a Account**  
+   - Clique em **Save** para concluir o processo de criação da Account.
+   
+---
+
+## 3. Criando uma Requisição `account/search`
 
 ### Requisitos:
 - Ter uma conta já salva no sysPass.
 
 ### Passos:
 
-2.1. No Postman, configure o método como **POST** e insira a URL da API:
+3.1. No Postman, configure o método como **POST** e insira a URL da API:
 
 ```bash
 https://syspass.vigilante.kira.br/api.php
 ```
 
-2.2. Navegue até a aba **Body**, selecione **raw**, e insira o conteúdo JSON-RPC:
+3.2. Navegue até a aba **Body**, selecione **raw**, e insira o conteúdo JSON-RPC:
 
 ```json
 {
@@ -66,7 +95,7 @@ https://syspass.vigilante.kira.br/api.php
 - **method**: Define a ação da API.
 - **authToken**: Token gerado após criar a autorização.
 
-2.3. Clique em **Send**. A resposta será semelhante a:
+3.3. Clique em **Send**. A resposta será semelhante a:
 
 ```json
 {
@@ -100,20 +129,20 @@ Disable SSL Verification
 
 ---
 
-## 3. Criando uma Requisição `account/create`
+## 4. Criando uma Requisição `account/create`
 
 ### Requisitos:
 - Ter uma categoria e um cliente criados no sysPass.
 
 ### Passos:
 
-3.1. No Postman, configure o método como **POST** e insira a URL da API:
+4.1. No Postman, configure o método como **POST** e insira a URL da API:
 
 ```bash
 https://syspass.vigilante.kira.br/api.php
 ```
 
-3.2. Navegue até a aba **Body**, selecione **raw**, e insira o conteúdo JSON-RPC:
+4.2. Navegue até a aba **Body**, selecione **raw**, e insira o conteúdo JSON-RPC:
 
 ```json
 {
@@ -138,7 +167,7 @@ https://syspass.vigilante.kira.br/api.php
 - **categoryId**: ID da categoria existente.
 - **clientId**: ID do cliente correspondente.
 
-3.3. Clique em **Send**. A resposta será semelhante a:
+4.3. Clique em **Send**. A resposta será semelhante a:
 
 ```json
 {
