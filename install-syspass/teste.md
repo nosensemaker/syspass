@@ -198,7 +198,7 @@ sudo vim /etc/apache2/sites-available/syspass.conf
 - **ServerAdmin:** Localhost é definido em servidores de teste ou desenvolvimento.
 - **ServerName:""  Alterar para o nome do seu servidor (exemplo: `syspass.vigilante.kira.br`).
 
-5.4. Ativar o site e os módulos necessários:
+5.3. Ativar o site e os módulos necessários:
 
 ```bash
 sudo a2ensite syspass
