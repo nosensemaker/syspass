@@ -89,7 +89,7 @@ sudo vim /etc/apache2/sites-available/syspass.conf
 #### Explicação:
 
 - **Redirecionar HTTP para HTTPS:** A primeira seção do VirtualHost garante que o tráfego na porta 80 seja redirecionado para a porta 443.
-- **Caminhos do certificado:** Ajustar os valores de `SSLCertificateFile` e `SSLCertificateKeyFile` para os arquivos gerados.
+- **Caminhos do certificado:** Colocar o caminho do certificado correto em `SSLCertificateFile` e da chave em `SSLCertificateKeyFile`.
 - **DocumentRoot:** Definir o diretório onde estão os arquivos do Syspass.
 - **ServerAdmin:"" Localhost é definido em servidores de teste ou desenvolvimento.
 
