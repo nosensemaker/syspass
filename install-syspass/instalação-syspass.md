@@ -1,6 +1,6 @@
 # Instalação do sysPass no Ubuntu 22.04
 
-## 1. Instalar o servidor web Apache2 e o banco de dados MariaDB
+## 1. Instalar o Apache2 e o banco de dados MariaDB
 
 1.1. Instalar os pacotes necessários:
 
