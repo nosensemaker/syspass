@@ -5,6 +5,7 @@
 1.1. Instalar os pacotes necessários:
 
 ```bash
+sudo apt update -y
 sudo apt-get install apache2 mariadb-server -y
 ```
 
