@@ -46,7 +46,7 @@ Token: 210309sdsajdbnh12034231049234
 2.1. No Postman, configure o método como **POST** e insira a URL da API:
 
 ```bash
-POST | https://syspass.vigilante.kira.br/api.php
+https://syspass.vigilante.kira.br/api.php
 ```
 
 2.2. Navegue até a aba **Body**, selecione **raw**, e insira o conteúdo JSON-RPC:
@@ -94,6 +94,10 @@ POST | https://syspass.vigilante.kira.br/api.php
 ### Caso de Erro:
 Se ocorrer um erro de SSL ("SELF-SIGNED CERTIFICATE"), desabilite a verificação SSL no Postman.
 
+```bash
+Disable SSL Verification
+```
+
 ---
 
 ## 3. Criando uma Requisição `account/create`
@@ -106,7 +110,7 @@ Se ocorrer um erro de SSL ("SELF-SIGNED CERTIFICATE"), desabilite a verificaçã
 3.1. No Postman, configure o método como **POST** e insira a URL da API:
 
 ```bash
-POST | https://syspass.vigilante.kira.br/api.php
+https://syspass.vigilante.kira.br/api.php
 ```
 
 3.2. Navegue até a aba **Body**, selecione **raw**, e insira o conteúdo JSON-RPC:
