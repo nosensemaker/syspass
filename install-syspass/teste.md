@@ -1,82 +1,192 @@
-# Configuração SSL Auto Assinado para Syspass
+# Instalação do sysPass no Ubuntu 22.04
 
-## 1. Instalar o OpenSSL
+## 1. Instalar o servidor web Apache2 e o banco de dados MariaDB
+
+1.1. Instalar os pacotes necessários:
 
 ```bash
-sudo apt install openssl
+sudo apt-get install apache2 mariadb-server -y
+```
+
+1.2. Adicionar o repositório para o PHP:
+
+```bash
+sudo add-apt-repository ppa:ondrej/php -y
+```
+
+1.3. Instalar pacotes adicionais:
+
+```bash
+sudo apt install software-properties-common ca-certificates lsb-release apt-transport-https -y
+```
+
+1.4. Instalar o PHP 7.4 e as extensões necessárias:
+
+```bash
+sudo apt install libapache2-mod-php7.4 php7.4 php7.4-mysqli php7.4-pdo php7.4-cgi php7.4-cli php7.4-common php7.4-gd php7.4-json php7.4-readline php7.4-curl php7.4-intl php7.4-ldap php7.4-xml php7.4-mbstring git -y
+```
+
+1.5. Editar o arquivo de configuração do PHP:
+
+```bash
+sudo vim /etc/php/7.4/apache2/php.ini
+```
+
+1.6. Ajustar as configurações necessárias:
+
+```
+post_max_size = 100M
+upload_max_filesize = 100M
+max_execution_time = 7200
+memory_limit = 512M
+date.timezone = UTC
+```
+
+1.7. Reiniciar o Apache para aplicar as mudanças:
+
+```bash
+sudo systemctl restart apache2
 ```
 
 ---
 
-## 2. Gerar a chave e o certificado
+## 2. Configurar o banco de dados MariaDB
 
-### 2.1 Criar o diretório do certificado:
+2.1. Executar o script de configuração inicial do MariaDB:
 
 ```bash
-sudo mkdir /etc/apache2/certificate
+sudo mysql_secure_installation
 ```
 
-### 2.2 Acessar o diretório criado:
+### Sugestão de configuração:
+
+- Current password for root: insira a senha do root
+- Unix_socket authentication: `n`
+- Change the root password? `n`
+- Remove anonymous users? `y`
+- Disallow root login remotely? `y`
+- Remove test database and access to it? `y`
+- Reload privilege tables now? `y`
+
+2.2. Acessar o MariaDB:
 
 ```bash
-cd /etc/apache2/certificate
+sudo mysql -u root -p
 ```
 
-### 2.3 Gerar a chave privada e o certificado autoassinado:
+2.3. Criar o banco de dados e configurar o usuário de serviço:
 
-```bash
-sudo openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out syspass.crt -keyout syspass.key
+```sql
+CREATE DATABASE syspassdb;
+GRANT ALL PRIVILEGES ON syspassdb.* TO 'syspassuser'@'localhost' IDENTIFIED BY 'password';
+FLUSH PRIVILEGES;
+EXIT;
 ```
 
-#### Preencher as informações com os seguintes valores:
-
-- **Country Name:** BR
-- **State or Province Name:** Distrito Federal
-- **Locality Name:** Brasília
-- **Organization Name:** ITI - Instituto Nacional de Tecnologia da Informação
-- **Organization Unit:** ICP-Brasil
-- **Common Name:** Insira o nome do domínio configurado, ex: `syspass.kira.br`.
-- **Email Address:** Opcional.
-
-> **Dica:** Certificar-se de que o valor de **Common Name** corresponde ao domínio usado no servidor.
-
-### 2.4 Verificar se o certificado e a chave estão no diretório correto:
+2.4. Criar um usuário administrador adicional:
 
 ```bash
-sudo ls /etc/apache2/certificate
+sudo mysql -u root -p
+```
+
+```sql
+CREATE USER 'name'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON syspassdb.* TO 'name'@'%';
+FLUSH PRIVILEGES;
+EXIT;
 ```
 
 ---
 
-## 3. Configurar o Apache
+## 3. Clonar o repositório do sysPass
 
-### 3.1 Editar o arquivo de configuração do Apache:
+3.1. Clonar o repositório oficial do GitHub:
+
+```bash
+git clone https://github.com/nuxsmin/sysPass.git
+```
+
+3.2. Mover o diretório para `/var/www/html/syspass`:
+
+```bash
+sudo mv sysPass /var/www/html/syspass
+```
+
+3.3. Ajustar as permissões e o proprietário do diretório:
+
+```bash
+sudo chown -R www-data:www-data /var/www/html/syspass
+sudo chmod 750 /var/www/html/syspass/app/{config,backup}
+```
+
+---
+
+## 4. Instalar o Composer
+
+4.1. Criar o script `install-composer.sh` no diretório do sysPass:
+
+```bash
+sudo vim /var/www/html/syspass/install-composer.sh
+```
+
+4.2. Adicionar o seguinte conteúdo:
+
+```bash
+#!/bin/sh
+EXPECTED_SIGNATURE="$(wget -q -O - https://composer.github.io/installer.sig)"
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+ACTUAL_SIGNATURE="$(php -r "echo hash_file('sha384', 'composer-setup.php');")"
+
+if [ "$EXPECTED_SIGNATURE" != "$ACTUAL_SIGNATURE" ]
+then
+  >&2 echo 'ERROR: Invalid installer signature'
+  rm composer-setup.php
+  exit 1
+fi
+
+php composer-setup.php --quiet
+RESULT=$?
+rm composer-setup.php
+exit $RESULT
+```
+
+4.3. Mover para o diretório do sysPass e executar o script:
+
+```bash
+cd /var/www/html/syspass/
+sudo sh install-composer.sh
+```
+
+4.4. Instalar o Composer:
+
+```bash
+sudo php composer.phar install --no-dev
+```
+
+*Nota: Caso necessário, force a execução com `yes`.*
+
+---
+
+## 5. Configurar o Apache
+
+5.1. Criar o arquivo de configuração `syspass.conf`:
 
 ```bash
 sudo vim /etc/apache2/sites-available/syspass.conf
 ```
 
-### 3.2 Substituir o conteúdo pelo seguinte:
+5.2. Adicionar a seguinte configuração:
 
 ```apache
 <VirtualHost *:80>
-    ServerName syspass.vigilante.kira.br
-    Redirect permanent / https://syspass.vigilante.kira.br/
-</VirtualHost>
-
-<VirtualHost *:443>
     ServerAdmin admin@localhost
     DocumentRoot "/var/www/html/syspass"
-    ServerName syspass.exemplo.br
-    SSLEngine on
-    SSLCertificateFile /etc/apache2/certificate/syspass.crt
-    SSLCertificateKeyFile /etc/apache2/certificate/syspass.key
+    ServerName syspass.example.com
 
     <Directory "/var/www/html/syspass/">
         Options MultiViews FollowSymlinks
         AllowOverride All
-        Order allow,deny
-        Allow from all
+        Require all granted
     </Directory>
 
     TransferLog /var/log/apache2/syspass_access.log
@@ -84,51 +194,24 @@ sudo vim /etc/apache2/sites-available/syspass.conf
 </VirtualHost>
 ```
 
-#### Explicação:
+5.3. Alterar o `ServerName` para o nome do seu servidor (exemplo: `syspass.vigilante.kira.br`).
 
-- **Redirecionar HTTP para HTTPS:** A primeira seção do VirtualHost garante que o tráfego na porta 80 seja redirecionado para a porta 443.
-- **Caminhos do certificado:** Ajustar os valores de `SSLCertificateFile` e `SSLCertificateKeyFile` para os arquivos gerados.
-- **DocumentRoot:** Definir o diretório onde estão os arquivos do Syspass.
-
----
-
-## 4. Ativar a configuração e reiniciar o Apache
-
-### 4.1 Ativar os módulos SSL e Rewrite:
-
-```bash
-a2enmod ssl
-a2enmod rewrite
-```
-
-### 4.2 Habilitar o site configurado:
+5.4. Ativar o site e os módulos necessários:
 
 ```bash
 sudo a2ensite syspass
+sudo systemctl reload apache2
 ```
-
-### 4.3 Reiniciar o serviço do Apache:
-
-```bash
-sudo systemctl restart apache2
-```
-
-### 4.4 Verificar o status do Apache:
-
-```bash
-sudo systemctl status apache2
-```
-
-> **Nota:** Certificar-se de que o status indica que o serviço está ativo e rodando sem erros.
 
 ---
 
-## 5. Acessar a URL configurada
+## 6. Testar a configuração
 
-### 5.1 Abrir o navegador e inserir o domínio configurado com HTTPS:
+6.1. Testar no navegador usando o domínio configurado.
 
-```text
-https://syspass.domain.name
-```
+*Exemplo:*
 
-> **Importante:** Certificar-se de usar o domínio configurado no arquivo de certificado e no Apache.
+- `http://syspass.dominio.name`
+
+**Nota:** Não se esqueça de adicionar o domínio configurado no arquivo `hosts` da máquina local ou no DNS.
+
